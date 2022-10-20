@@ -2,156 +2,75 @@
     <head>
         <title>Ednaldo Cars</title>
         <meta charset="utf-8" />
-        <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
-        <style>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald&display=swap">
+        <link rel="stylesheet" href="style.css" />
 
-            *{
-                font-family: 'Oswald', sans-serif;
-                margin: 0;
-                padding: 0;
-                box-sizing: border-box;
-            }
-
-            #carros{
-                max-width: 1330px;
-                margin: 0 auto;
-                padding: 0 2%;
-                display: flex;
-                flex-wrap: wrap;
-            }
-
-            #carrinho{
-                max-width: 900px;
-                margin: 0 auto;
-                padding: 0 2%;
-                display: block;
-            }
-
-            .carro-single{
-                width: 32%;
-                margin-right: 1%;
-                border: 1px solid #ccc;
-                margin-top: 20px;
-                margin-bottom: 20px;
-            }
-
-            .carro-single img{
-                max-width: 100%;
-            }
-
-            .carro-single p{
-                text-align: center;
-                font-size: 18px;
-                padding: 10px;
-            }
-
-            .carro-single a{
-                text-decoration: none;
-                color: white;
-                background-color: #055eb2;
-                text-align: center;
-                display: block;
-                padding: 10px 0;
-                font-size: 16px;
-            }
-
-            h2{
-                background-color: #ff7f27;
-                padding: 10px;
-                text-align: center;
-                color: white;
-            }
-
-            .infocarrinho{
-                border-bottom: 2px dotted;
-                padding: 10px 0;
-            }
-
-            @media screen and (max-width: 768px){
-                .carro-single{
-                    width: 100%;
-                    margin-right: 0;
-                }
-            }
-
-        </style>
     </head>
 
     <body>
-        <h2>HOME</h2>
+        <header>
 
-        <div id="carros">
+            <div id="menu">
 
-        </div><!--carros-->
+            </div><!--menu-->
 
-        <h2>CARRINHO</h2>
+            <nav>
 
-        <div id="carrinho">
+                <a class="logo" href="index.html">EDNALDO CARS</a>
 
-        </div><!--carrinho-->
+                <div class="mobile-menu">
+
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+
+                </div>
+
+                <ul class="nav-list">
+
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="cars.html">CARROS</a></li>
+                    <li><a href="cart.html">CARRINHO</a></li>
+                    <li><a href="#">LOGIN</a></li>
+
+                </ul>
+
+            </nav>
+
+        </header>
+
+        <main></main>
 
         <script>
+
+            src="mobile-navbar.js"
+
             const itens = [
                 {
                     id: 0,
-                    name: 'UNO',
-                    img: 'uno_image.jpg',
-                    quant: 0
+                    name: 'QUEM SOMOS',
                 },
                 {
                     id: 1,
-                    name: 'CELTA',
-                    img: 'celta_image.jpg',
-                    quant: 0
+                    name: 'LOJAS',
                 },
                 {
                     id: 2,
-                    name: 'GOL',
-                    img: 'gol_image.jpg',
-                    quant: 0
-                },
+                    name: 'SAC',
+                },               
             ]
 
-            inicializarLoja = () => {
-                var containerCarros = document.getElementById('carros');
+            inicializarMenu = () => {
+                var containerMenu = document.getElementById('menu');
                 itens.map((val)=>{
-                    containerCarros.innerHTML+= `
+                    containerMenu.innerHTML+= `
 
-                    <div class="carro-single">
-                        <img src="`+val.img+`" />
-                        <p>`+val.name+`</p>
-                        <a key="`+val.id+`" href="#">ADICIONAR AO CARRINHO</a>
+                    <div class="menu-single">
+                        <a key="``" href="#">ADICIONAR AO CARRINHO</a>
                     </div>
                     `;
-                })
-            }
-
-            inicializarLoja();
-
-            atualizarCarrinho = () =>{
-                var containerCarrinho = document.getElementById(`carrinho`);
-                containerCarrinho.innerHTML = "";
-                itens.map((val)=>{
-                    if(val.quant > 0){
-                        containerCarrinho.innerHTML+= `
-                        <div class="infocarrinho">
-                        <p style="float:left;">CARRO: `+val.name+`</p>
-                        <p style="float:right;">QUANTIDADE: `+val.quant+`</p>
-                        <div style="clear:both"></div>
-                        </div>
-                    `;
-                    }
-                })
-            }
-
-            var links = document.getElementsByTagName('a');
-
-            for(var i = 0; i < links.length; i++){
-                links[i].addEventListener("click",function(){
-                    let key = this.getAttribute('key');
-                    itens[key].quant++;
-                    atualizarCarrinho();
-                    return false;
                 })
             }
 
