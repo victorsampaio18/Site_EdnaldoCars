@@ -1,0 +1,124 @@
+<html>
+    <head>
+        <title>Carros</title>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald&display=swap">
+        <link rel="stylesheet" href="style.css" />
+    </head>
+
+    <body>
+        <header>
+
+            <nav>
+
+                <a class="logo" href="index.html">EDNALDO CARS</a>
+
+                <div class="mobile-menu">
+
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+
+                </div>
+
+                <ul class="nav-list">
+
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="cars.html">CARROS</a></li>
+                    <li><a href="cart.html">CARRINHO</a></li>
+                    <li><a href="#">LOGIN</a></li>
+
+                </ul>
+
+            </nav>
+
+        </header>
+
+        <h2>CARROS</h2>
+
+        <div id="carros">
+
+        </div><!--carros-->
+
+        <h2>CARRINHO</h2>
+
+        <div id="carrinho">
+
+        </div><!--carrinho-->
+
+        <script>
+
+            src="mobile-navbar.js"
+
+            const itens = [
+                {
+                    id: 0,
+                    name: 'UNO',
+                    img: 'uno_image.jpg',
+                    quant: 0
+                },
+                {
+                    id: 1,
+                    name: 'CELTA',
+                    img: 'celta_image.jpg',
+                    quant: 0
+                },
+                {
+                    id: 2,
+                    name: 'GOL',
+                    img: 'gol_image.jpg',
+                    quant: 0
+                },
+            ]
+
+            inicializarLoja = () => {
+                var containerCarros = document.getElementById('carros');
+                itens.map((val)=>{
+                    containerCarros.innerHTML+= `
+
+                    <div class="carro-single">
+                        <img src="`+val.img+`" />
+                        <p>`+val.name+`</p>
+                        <a key="`+val.id+`" href="#">ADICIONAR AO CARRINHO</a>
+                    </div>
+                    `;
+                })
+            }
+
+            inicializarLoja();
+
+            atualizarCarrinho = () =>{
+                var containerCarrinho = document.getElementById(`carrinho`);
+                containerCarrinho.innerHTML = "";
+                itens.map((val)=>{
+                    if(val.quant > 0){
+                        containerCarrinho.innerHTML+= `
+                        <div class="infocarrinho">
+                        <p style="float:left;">CARRO: `+val.name+`</p>
+                        <p style="float:right;">QUANTIDADE: `+val.quant+`</p>
+                        <div style="clear:both"></div>
+                        </div>
+                    `;
+                    }
+                })
+            }
+
+            var links = document.getElementsByTagName('a');
+
+            for(var i = 0; i < links.length; i++){
+                links[i].addEventListener("click",function(){
+                    let key = this.getAttribute('key');
+                    itens[key].quant++;
+                    atualizarCarrinho();
+                    return false;
+                })
+            }
+
+        </script>
+
+        <main></main>
+
+    </body>
+</html>
