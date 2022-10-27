@@ -9,6 +9,7 @@
     </head>
 
     <body>
+
         <header>
 
             <nav>
@@ -27,8 +28,8 @@
 
                     <li><a href="index.html">HOME</a></li>
                     <li><a href="cars.html">CARROS</a></li>
-                    <li><a href="cart.html">CARRINHO</a></li>
-                    <li><a href="#">LOGIN</a></li>
+                    <li><a href="cadastro.html">CADASTRO</a></li>
+                    <li><a href="login.html">LOGIN</a></li>
 
                 </ul>
 
@@ -50,27 +51,70 @@
 
         <script>
 
-            src="mobile-navbar.js"
-
             const itens = [
                 {
                     id: 0,
                     name: 'UNO',
                     img: 'uno_image.jpg',
-                    quant: 0
+                    quant: 0,
+                    price: 30000
                 },
                 {
                     id: 1,
                     name: 'CELTA',
                     img: 'celta_image.jpg',
-                    quant: 0
+                    quant: 0,
+                    price: 27000
                 },
                 {
                     id: 2,
                     name: 'GOL',
                     img: 'gol_image.jpg',
-                    quant: 0
+                    quant: 0,
+                    price: 35000
                 },
+                {
+                    id: 3,
+                    name: 'HB20S',
+                    img: 'hb20s_image.jpg',
+                    quant: 0,
+                    price: 55000
+                },
+                {
+                    id: 4,
+                    name: 'ETIOS SEDAN',
+                    img: 'etios_image.jpg',
+                    quant: 0,
+                    price: 50000
+                },
+                {
+                    id: 5,
+                    name: 'CIVIC',
+                    img: 'civic_image.jpg',
+                    quant: 0,
+                    price: 130000
+                },
+                {
+                    id: 6,
+                    name: 'HR-V',
+                    img: 'hrv_image.jpg',
+                    quant: 0,
+                    price: 150000
+                },
+                {
+                    id: 7,
+                    name: 'CRETA',
+                    img: 'creta_image.jpg',
+                    quant: 0,
+                    price: 145000
+                },
+                {
+                    id: 8,
+                    name: 'X1',
+                    img: 'x1_image.jpg',
+                    quant: 0,
+                    price: 230000
+                }
             ]
 
             inicializarLoja = () => {
@@ -81,6 +125,7 @@
                     <div class="carro-single">
                         <img src="`+val.img+`" />
                         <p>`+val.name+`</p>
+                        <p> R$ `+val.price+`</p>
                         <a key="`+val.id+`" href="#">ADICIONAR AO CARRINHO</a>
                     </div>
                     `;
@@ -117,6 +162,8 @@
             }
 
         </script>
+
+        <script src="mobile-navbar.js"></script>
 
         <main></main>
 

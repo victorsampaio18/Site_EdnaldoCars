@@ -1,7 +1,7 @@
 <html>
     <head>
         <title>Ednaldo Cars</title>
-        <meta charset="utf-8" />
+        <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald&display=swap">
@@ -10,11 +10,8 @@
     </head>
 
     <body>
+
         <header>
-
-            <div id="menu">
-
-            </div><!--menu-->
 
             <nav>
 
@@ -32,48 +29,59 @@
 
                     <li><a href="index.html">HOME</a></li>
                     <li><a href="cars.html">CARROS</a></li>
-                    <li><a href="cart.html">CARRINHO</a></li>
-                    <li><a href="#">LOGIN</a></li>
+                    <li><a href="cadastro.html">CADASTRO</a></li>
+                    <li><a href="login.html">LOGIN</a></li>
 
                 </ul>
 
             </nav>
 
+            <div class="slider">
+
+                <div class="slides">
+                    <input type="radio" name="radio-btn" id="radio1" />
+                    <input type="radio" name="radio-btn" id="radio2" />
+                    <input type="radio" name="radio-btn" id="radio3" />
+                    <input type="radio" name="radio-btn" id="radio4" />
+
+                    <div class="slide first">
+                        <img src="Grecia.jpg" alt="imagem1" />
+                    </div>
+                    <div class="slide">
+                        <img src="GTA.jpg" alt="imagem2" />
+                    </div>
+                    <div class="slide">
+                        <img src="Brasilia.jpg" alt="imagem3" />
+                    </div>
+                    <div class="slide">
+                        <img src="2022.07.31-15.36.jpg" alt="imagem4" />
+                    </div>
+
+                    <div class="navigation-auto">
+                        <div class="auto-btn1"></div>
+                        <div class="auto-btn2"></div>
+                        <div class="auto-btn3"></div>
+                        <div class="auto-btn4"></div>
+                    </div>
+
+                    <div class="manual-navigation">
+                        <label for="radio1" class="manual-btn"></label>
+                        <label for="radio2" class="manual-btn"></label>
+                        <label for="radio3" class="manual-btn"></label>
+                        <label for="radio4" class="manual-btn"></label>
+                    </div>
+    
+                </div>
+    
+            </div>
+
         </header>
 
         <main></main>
 
-        <script>
+        <script src="mobile-navbar.js"></script>
 
-            src="mobile-navbar.js"
+        <script src="script.js"></script>
 
-            const itens = [
-                {
-                    id: 0,
-                    name: 'QUEM SOMOS',
-                },
-                {
-                    id: 1,
-                    name: 'LOJAS',
-                },
-                {
-                    id: 2,
-                    name: 'SAC',
-                },               
-            ]
-
-            inicializarMenu = () => {
-                var containerMenu = document.getElementById('menu');
-                itens.map((val)=>{
-                    containerMenu.innerHTML+= `
-
-                    <div class="menu-single">
-                        <a key="``" href="#">ADICIONAR AO CARRINHO</a>
-                    </div>
-                    `;
-                })
-            }
-
-        </script>
     </body>
 </html>
