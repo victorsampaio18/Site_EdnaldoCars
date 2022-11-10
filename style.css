@@ -95,7 +95,7 @@ form input[type=tel]:focus{
 main {
     background: white no-repeat center center;
     background-size: cover;
-    height: 92vh;
+    height: 50vh;
 }
 
 .nav-list {
@@ -287,15 +287,94 @@ h2{
     padding: 10px 0;
 }
 
+footer{
+    width: 100%;
+    min-height: 250px;
+    background: #ff7f27;
+    display: flex;
+}
+
+footer .boxs{
+    width: 480px;
+    min-height: 150px;
+    padding: 30px;
+    text-align: center;
+}
+
+footer .boxs:nth-child(3){
+    width: 400px;
+}
+
+.boxs h4{
+    color: white;
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+
+.boxs ul li{
+    margin: 10px 0px;
+    list-style: none;
+}
+
 @media screen and (max-width: 768px){
     .carro-single{
         width: 100%;
         margin-right: 0;
     }
 
+    .slider{
+        margin: 0px 0px;
+        width: 0px;
+        height: 0px;
+        overflow: hidden;
+    }
+    
+    .slides{
+        width: 0%;
+        height: 0px;
+        display: flex;
+    }
+
+    .manual-navigation{
+        position: absolute;
+        width: 0px;
+        margin-top: 0px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .navigation-auto{
+        position: absolute;
+        width: 0px;
+        margin-top: 0px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .manual-btn{
+        border: 0px;
+        padding: 0px;
+        border-radius: 10px;
+    }
+
+    .navigation-auto div{
+        border: 0px;
+        padding: 0px;
+        border-radius: 10px;
+    }
+
+    footer{
+        flex-direction: column;
+    }
+
+    footer .boxs{
+        width: 100%;
+        text-align: center;
+    }
+
 }
 
-@media (max-width: 999px) {
+@media (max-width: 768px) {
     body {
       overflow-x: hidden;
     }
